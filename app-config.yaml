@@ -1,0 +1,8 @@
+
+# Server Settings
+server:
+  applicationConnectors:
+      - type: http
+        port : 5001
+
+greetingStatus: true
