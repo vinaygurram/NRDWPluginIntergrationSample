@@ -5,9 +5,9 @@ This project aims to integrate dropwizard application to [new relic drop wizard 
 ### Sample Run
 
 #### Requirements
-* [Maven][maven]
-* Newrelic account 
-* Basic knowledge about dropwizard  
+* [Maven][Maven]
+* [Newrelic][NewRelic] account 
+* Basic knowledge about [Dropwizard][dropwizard]  
 
 #### Setting up configurations
 This project includes __config__ folder in root path. This direcotry contains __newrelic.json__ and 
@@ -24,7 +24,9 @@ Start the application using the jar from project root directory.
 
 You can view your app metrics in newrelic console under plugins.
 
-[maven]: https://maven.apache.org/download.cgi
+[NewRelic]: https://newrelic.com/
+[Maven]: https://maven.apache.org/download.cgi
+[dropwizard]: dropwizard.github.io
 [NRPlugin]: https://github.com/dbaggott/newrelic-dropwizard
 [NRConfig]: https://github.com/dbaggott/newrelic-dropwizard/blob/master/src/main/resources/config/newrelic.template.json
 [NRPluginConfig]: https://github.com/dbaggott/newrelic-dropwizard/blob/master/src/main/resources/config/plugin.template.json
