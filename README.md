@@ -6,6 +6,7 @@ This project aims to integrate dropwizard application to [new relic drop wizard 
 
 #### Requirements
 * [Maven][maven]
+* Newrelic account 
 * Basic knowledge about dropwizard  
 
 #### Setting up configurations
