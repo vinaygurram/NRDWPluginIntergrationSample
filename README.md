@@ -15,7 +15,7 @@ __plugin.json__. __newrelic.json__ file contains [newrelic configuration][NRConf
 __plugin.json__ contains [new relic drop wizard plugin configuration][NRPluginConfig].
 
 #### Build the project
-``mvn clean install``
+``mvn clean package``
 
 #### Start App 
 Start the application using the jar from project root directory.    
@@ -26,7 +26,7 @@ You can view your app metrics in newrelic console under plugins.
 
 [NewRelic]: https://newrelic.com/
 [Maven]: https://maven.apache.org/download.cgi
-[dropwizard]: dropwizard.github.io
+[dropwizard]: https://dropwizard.github.io
 [NRPlugin]: https://github.com/dbaggott/newrelic-dropwizard
 [NRConfig]: https://github.com/dbaggott/newrelic-dropwizard/blob/master/src/main/resources/config/newrelic.template.json
 [NRPluginConfig]: https://github.com/dbaggott/newrelic-dropwizard/blob/master/src/main/resources/config/plugin.template.json
