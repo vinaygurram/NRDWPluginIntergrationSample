@@ -2,6 +2,9 @@ package com.backend.integrations;
 
 import com.backend.integrations.api.TestResource;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.concurrent.Executors;
 
 import io.dnbg.newrelic.dropwizard.Main;
@@ -12,6 +15,7 @@ import io.dropwizard.setup.Environment;
  * Application main class. This class is used to initialize application environment.
  */
 public class App extends Application<AppConfiguration> {
+    private static final Logger logger = LoggerFactory.getLogger(App.class);
 
     // Run method
     public static void main(String[] args) throws Exception {
@@ -34,13 +38,13 @@ public class App extends Application<AppConfiguration> {
         environment.healthChecks().register("test", healthCheck);
 
         // Start new relic reporting
-        setUpNewRelicDWPluginReporter(configuration);
+        setUpNewRelicDWPluginReporter();
     }
 
     /**
-     * @param configuration application configuration. contains new relic configs
+     * Start monitoring your app send metrics to newrelic dropwizad plugin.
      */
-    private static void setUpNewRelicDWPluginReporter(AppConfiguration configuration) {
+    private static void setUpNewRelicDWPluginReporter() {
         try {
             Thread tt = new Thread(new Runnable() {
                 public void run() {
@@ -49,6 +53,7 @@ public class App extends Application<AppConfiguration> {
             });
             Executors.newSingleThreadExecutor().submit(tt);
         } catch (Exception e) {
+            logger.error("Error in nrdropwizard plugin config", e);
         }
     }
 }
